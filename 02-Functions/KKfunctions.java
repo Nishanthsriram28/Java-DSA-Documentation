@@ -91,7 +91,112 @@ public class KKfunctions {
         return prime;
     }
 
+    // Factorial
+    public static void main(String args[]) {
+    int number=10;
+    System.out.println(factorial(number));
+    }
+    public static int factorial(int a){
+    int counter=1;
+    for(int i=1;i<=a;i++){
+    counter*=i;
+    }
+    return counter;
+    }
+
+    // palindrome Number
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int input = sc.nextInt();
+    System.out.println(palindrome(input));
+    }
+    public static boolean palindrome(int n){
+    int original = n;
+    int duplicalte=original;
+    int lastdigit =0;
+    int reverse=0;
+    while(duplicalte>0){
+    lastdigit = duplicalte % 10;
+    duplicalte = duplicalte / 10;
+    reverse = reverse * 10 + lastdigit;
+    }
+    System.out.println("reversed = "+reverse);
+    return n == reverse;
+    }
+
+    // Pythogorian Triplet ( without knowing things)
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int input = sc.nextInt();
+    if(pytha(input)){
+    System.out.println("its a pythagorean triplet ");
+    }else{
+    System.out.println("not a pythagorean triplet");
+    }
+    }
+    public static boolean pytha(int n){
+    int original = n;
+    int duplicalte = original;
+    int lastsquared = 0;
+    int firstsquared = 0;
+    while (duplicalte > 0) {
+         // last number
+    int lastdigit = duplicalte % 10;
+    lastdigit *= lastdigit;
+    lastsquared = lastdigit;
+    duplicalte = duplicalte / 10;
+    break;
+    }
+    System.out.println(lastsquared);
+    while (duplicalte > 0) {
+         // first & second numbers
+    int sec_fir_digit = duplicalte % 10;
+    sec_fir_digit *= sec_fir_digit;
+    firstsquared += sec_fir_digit;
+    duplicalte = duplicalte / 10;
+    }
+    System.out.println(firstsquared);
+    return original == (lastsquared + firstsquared);
+    }
+
+    // Pythogorian Triplet ( with knowing things)
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int a= sc.nextInt();
+    int b = sc.nextInt();
+    int c = sc.nextInt();
+    if(pytha(a,b,c)){
+    System.out.println("pytha triplet");
+    }else{
+    System.out.println("not a pytha triplet");
+    }
+    }
+    public static boolean pytha(int a, int b, int c){
+    int asquared = a*a;
+    int bsquared = b*b;
+    int csquared = c*c;
+    return (asquared + bsquared == csquared || asquared + csquared == bsquared ||
+    bsquared + csquared == asquared );
+    }
+
+    // primes b/w numbers
+    not yet completed
+
+    // sum of n natural numbers
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(sum(n)); 
+    }
+    public static int sum(int n){
+        int j=0;
+        for(int i=1;i<=n;i++){
+            j += i;
+        }
+        return j;
+    }
     
+
 
 }
 
