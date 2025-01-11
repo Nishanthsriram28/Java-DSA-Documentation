@@ -196,7 +196,26 @@ public class KKfunctions {
         return j;
     }
     
-
+    //Armstrong Number Only for 3 Digits
+        public static void main(String [] args){
+               if(Armstrong(153)){
+                System.out.println("its an armstrong Number");
+               }else{
+                System.out.println("Not an armstrong Number");
+               }
+        }
+        public static boolean Armstrong(int n){
+                int cubed = 0;
+                int duplicate = n;
+                while (duplicate>0) {
+                        int lastdigit = duplicate % 10;
+                        lastdigit = lastdigit*lastdigit*lastdigit;
+                        cubed += lastdigit;
+                        duplicate = duplicate / 10;  
+                }
+                return cubed==n;
+        }
+  
 
 }
 
