@@ -289,7 +289,235 @@ public class KKfunctions {
         }
     }
 
-    
+    // Hour glass pattern , but not setting correctly
+    public static void main(String[] args) {
+    int n=5;
+    for(int i=1;i<=n;i++){
+    for(int k=0;k<=i-1;k++){
+    System.out.print(" ");
+    }
+    for(int j=1;j<=n+1-i;j++){
+    System.out.print("* ");
+    // System.out.print(" ");
+    }
+    System.out.println();
+    }
+    int N=n-1;
+    for(int i=1;i<=N;i++){
+    for(int k=1;k<=N-i;k++){
+    System.out.print(" ");
+    }
+    for(int j=0;j<=i;j++){
+    System.out.print("* ");
+    // System.out.print(" ");
+    }
+    System.out.println();
+    }
+    }
+
+    // Hollow Rectangle
+    public static void hollow_rectangle(int rows,int cols){
+    for(int i=1;i<=rows;i++){
+    for(int j=1;j<=cols;j++){
+    if(i==1|| i==rows ||j==1||j==cols){
+    System.out.print("*");
+    }else{
+    System.out.print(" ");
+    }
+    }
+    System.out.println(" ");
+    }
+    }
+    public static void main(String[] args){
+    hollow_rectangle(5,5 );
+    }
+
+    // Hollow Triangle
+    public static void hollow_triangle(int rows){
+    for(int i=1;i<=rows;i++){
+    for(int j=1;j<=rows*2-1;j++){
+    if(i+j==6 || j-i==4 || i==5){
+    System.out.print("*");
+    }else{
+    System.out.print(" ");
+    }
+    }
+    System.out.println();
+    }
+    }
+    public static void main(String[] args){
+    hollow_triangle(5);
+    }
+
+    // Inverted hlf pyramid with numbers
+    public static void inverted_numpy(int n){
+    for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+    if(i+j<=6){
+    System.out.print(j);
+    }else{
+    System.out.print(" ");
+    }
+    }
+    System.out.println();
+    }
+    }
+    public static void main(String[] args) {
+    inverted_numpy(5);
+    }
+
+    // Floyd's Triangle
+    public static void floyds_tri(int n){
+    int counter =1;
+    for(int i=1;i<=n;i++){
+    int j=1;
+    while(j<=i){
+    System.out.print(counter+" ");
+    counter++;
+    j++;
+    }
+    System.out.println();
+    }
+    }
+    public static void main(String[] args) {
+    floyds_tri(5);
+    }
+
+    // 0-1 Triangle
+    public static void null_triangle(int n){
+    for(int i=1;i<=n;i++){
+    for(int j=1;j<=i;j++){
+    if((i-j) % 2 == 0){
+    System.out.print(1);
+    }else{
+    System.out.print(0);
+    }
+    }
+    System.out.println();
+    }
+    }
+    public static void main(String[] args){
+    null_triangle(10);
+    }
+
+    // Butterfly Pattern
+    public static void butterfly(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            for(int j=1;j<=2*(n-i);j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            for(int j=1;j<=2*(n-i);j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        butterfly(5);
+    }
+
+    // Solid Rhombus
+    public static void rhombus(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=n;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        rhombus(5);
+    }
+
+    // Hollow Rhombus
+    public static void hollow_rhombus(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=n;j++){
+            if(i==1 || i==n || j==1 || j==n){
+                System.out.print("*");
+            }else{
+                System.out.print(" ");
+            }
+        }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        hollow_rhombus(5);
+    }
+
+    // Diamond Pattern-1
+    public static void diamond(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                if(i+j>=6){
+                    System.out.print("* ");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=n;j++){
+                if(i+j>=6){
+                    System.out.print("* ");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        diamond(5);
+    }
+
+    // Diamond Pattern-2
+    public static void diamond(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        diamond(4);
+    }
   
 
 }
