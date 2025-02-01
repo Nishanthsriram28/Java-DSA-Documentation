@@ -149,7 +149,81 @@ public class arrays {
         System.out.print(binary_search(arr,key));
     }
 
+    // Revesering An array
+    public static void reverse_array(int arr[]){
+    int start = 0;
+    int end = arr.length-1;
+    while(start<end){
+    int temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start += 1;
+    end -= 1;
+    }
+    }
+    public static void main(String[] args) {
+    int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+    System.out.print("Before Swap :");
+    for(int i=0;i<arr.length;i++){
+    System.out.print(+arr[i]+" ");
+    }
+    System.out.println();
+    reverse_array(arr);
+    System.out.print("After Swap :");
+    for(int i=0;i<arr.length;i++){
+    System.out.print(arr[i]+" ");
+    }
+    }
 
+    // Pairs in Arrays
+    public static void pairs(int arr[]){
+    for(int i=0;i<arr.length;i++){
+    for(int j=i+1;j<arr.length;j++){
+    System.out.print("("+arr[i]+","+arr[j]+")");
+    }
+    System.out.println();
+    }
+    }
+    public static void main(String[] args){
+    int arr[] = {2,4,6,8,10};
+    pairs(arr);
+    }
+
+    // Sub Arrays
+    public static void sub_array(int arr[]) {
+        int ts = 0;
+        int minsum = Integer.MAX_VALUE;
+        int maxsum = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                int sum = 0;
+                for (int k = i; k <= j; k++) {
+                    System.out.print(arr[k] + " ");
+                    sum += arr[k];
+                }
+                System.out.println("sum is "+sum);
+                ts++;
+                System.out.println();
+                if(sum<minsum){
+                    minsum = sum;
+                }
+                if(sum>maxsum){
+                    maxsum = sum;
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("total sub arrays "+ts);
+        System.out.println("Max Sum in Sub array is "+maxsum);
+        System.out.println("Min Sum in Sub array is "+minsum);
+    }
+    public static void main(String[] args) {
+        int arr[] = { 2, 4, 6, 8, 10 };
+        sub_array(arr);
+    }
+
+
+    
 
 
 }
