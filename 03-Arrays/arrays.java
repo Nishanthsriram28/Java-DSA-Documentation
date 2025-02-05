@@ -222,6 +222,41 @@ public class arrays {
         sub_array(arr);
     }
 
+  // Brute Force sub arrays
+    public static void main(String[] args) {
+        int arr[] = { 1,-2,6,-1,3 };
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i; j++) {
+                int sum = 0;
+                for (int k = i; k <= i + j; k++) {
+                    sum += arr[k];
+                    if (max < sum) {
+                        max = sum;
+                    }
+                    if (min > sum) {
+                        min = sum;
+                    }
+                    System.out.println(sum);
+                }
+               System.out.println();
+            }       
+        } 
+        System.out.println("Maximum sub array is " + max);
+        System.out.println("Minimum sub array is " + min);
+    }
+
+    //Prefix Sum of an array
+    public static void main(String[] args){
+        int arr[] = {1,2,3,4,5};
+        int sum = 0;
+        for(int i=0;i<arr.length;i++){
+            sum = sum+arr[i];
+            System.out.print(sum+" ");
+        }
+    }
 
     
 
