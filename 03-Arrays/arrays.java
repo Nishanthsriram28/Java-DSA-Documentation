@@ -189,37 +189,24 @@ public class arrays {
     pairs(arr);
     }
 
-    // Sub Arrays
-    public static void sub_array(int arr[]) {
-        int ts = 0;
-        int minsum = Integer.MAX_VALUE;
-        int maxsum = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i; j < arr.length; j++) {
-                int sum = 0;
-                for (int k = i; k <= j; k++) {
-                    System.out.print(arr[k] + " ");
-                    sum += arr[k];
+    // Simple Sub Arrays
+    public static void main(String[] args){
+        int arr[]={1,2,3,4,5};
+        subarray(arr);
+    }
+    public static void subarray(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            int start = i;
+            for(int j=i;j<arr.length;j++){
+                int end = j;
+                for(int k=start; k<=end; k++){
+                    System.out.print(arr[k]);
                 }
-                System.out.println("sum is "+sum);
-                ts++;
                 System.out.println();
-                if(sum<minsum){
-                    minsum = sum;
-                }
-                if(sum>maxsum){
-                    maxsum = sum;
-                }
             }
             System.out.println();
         }
-        System.out.println("total sub arrays "+ts);
-        System.out.println("Max Sum in Sub array is "+maxsum);
-        System.out.println("Min Sum in Sub array is "+minsum);
-    }
-    public static void main(String[] args) {
-        int arr[] = { 2, 4, 6, 8, 10 };
-        sub_array(arr);
+
     }
 
   // Brute Force sub arrays
