@@ -236,14 +236,62 @@ public class arrays {
     }
 
     //Prefix Sum of an array
-    public static void main(String[] args){
-        int arr[] = {1,2,3,4,5};
-        int sum = 0;
+   public static void main(String[] args) {
+        int arr[] = { 2, 4, 6, 8, 10 };
+        int maxsum = Integer.MIN_VALUE;
+        int cursum = 0;
+        int prefix[] = new int[arr.length];
+        prefix[0] = arr[0];
+        for (int i = 1; i < prefix.length; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                cursum = i == 0 ? prefix[j] : prefix[j] - prefix[i - 1];
+                if (cursum > maxsum) {
+                    maxsum = cursum;
+                }
+            }
+        }
+        System.out.println("Highest sum is " + maxsum);
+    }
+    
+
+    //Kadanes Algorithm ( with special case all-negatives )
+     public static void main(String[] args) {
+        int arr[] = {4, 3, -10, 3 ,-1, 2 ,0, -3 ,5 ,7 ,-4, -8 ,-10 ,4, 4, 7};
+        boolean flag = false;
         for(int i=0;i<arr.length;i++){
-            sum = sum+arr[i];
-            System.out.print(sum+" ");
+            flag = arr[i]<0;
+        }
+        if(flag == true){
+            all_negatives(arr);
+        }else{
+            kadanes(arr);
         }
     }
+    public static void kadanes(int arr[]){
+        int cs = 0;
+        int ms = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            cs += arr[i];
+            if(cs<0){
+                cs = 0;
+            }
+            ms = Math.max(cs, ms);
+        }
+        System.out.println("maximum sub array is :"+ms);
+    }
+    public static void all_negatives(int arr[]){
+        int ms = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>ms){
+                ms = arr[i];
+            }
+        }
+        System.out.println("maximum sub array is :"+ms);
+    }
+    
 
     
 
